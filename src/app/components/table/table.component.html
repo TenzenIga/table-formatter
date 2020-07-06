@@ -1,0 +1,21 @@
+<ng-container  *ngIf="data">
+  <table class="table table-bordered mt-5" >
+    <thead>
+      <tr >
+        <th scope="col" *ngFor="let name of headings" >{{name}}</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows; index as i"> 
+        <td *ngFor="let value of row; index as j"  >
+          <input type="text" value="{{value}}" (blur)="edit($event, i, j)">
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="delete(row)" >&times;</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-add-item (childEvent)="addRow($event)" [headings]="headings" ></app-add-item>
+  <button type="button" type="submit" (click)="send()" class="btn btn-primary ml-1">Выгрузить</button>
+</ng-container>

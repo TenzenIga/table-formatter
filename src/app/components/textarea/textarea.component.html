@@ -1,0 +1,12 @@
+<form class="mt-5" #jsonForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Json</label>
+        <textarea class="form-control" (blur)="isValidJson(json.value)"
+          [class.is-invalid]="jsonHasError && json.touched" 
+         #json="ngModel" rows="3" name="json" [(ngModel)]='dataModel.json'
+         >
+    </textarea>
+        <small class="text-danger" [class.d-none]="!jsonHasError || json.untouched" >Invalid JSON</small>
+    </div>
+    <button type="button" [disabled]="jsonHasError" type="submit" class="btn btn-primary">Продолжить</button>
+</form>

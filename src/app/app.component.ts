@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { JsonService } from './json.service';
+import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'table';
+export class AppComponent implements OnInit {
+
+    ngOnInit(){
+  
+    }
+  constructor(
+  ){}
+ 
 }
